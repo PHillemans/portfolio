@@ -3,7 +3,9 @@
     import Interests from './Interests.svelte'
     import Experience from './Experience.svelte'
     import Portfolio from './Portfolio.svelte'
-    let name:string = 'Pepijn Hillemans';
+
+    let name: string = 'Pepijn Hillemans';
+    let description: string = 'IT student that likes experimenting';
 </script>
 
 <style style="css">
@@ -12,8 +14,8 @@
     }
 </style>
 
-<div class='gigantisch'>
-    <Intro name={name} />
+<div class="bg-gray-300 gigantisch">
+    <Intro {name} {description} />
     <Interests />
     <Experience />
     <Portfolio />

@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+    client:
+        build: ./Client/
+        image: svelte:client
+        volumes:
+            - ./Client/src:/usr/src/app/src
+        ports:
+            - "1234:1234"
+            - "1235:1235"
+        environment:
+            - PORT=1234
+            - CHOKIDAR_USEPOLLING=1
