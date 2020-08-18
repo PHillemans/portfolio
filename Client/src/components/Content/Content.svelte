@@ -14,7 +14,7 @@
     }
 </style>
 
-<div class="bg-gray-300 gigantisch">
+<div class="bg-gray-200 gigantisch">
     <Intro {name} {description} />
     <Interests />
     <Experience />
