@@ -1,18 +1,19 @@
 <script lang="ts">
+    import image from '../../images/svelte-logo.png';
     export let name: string;
     export let description: string;
 </script>
 
 <div class="flex justify-between">
     <!-- Name intro -->
-    <div class="flex-row items-center justify-center w-2/5 pt-20 mt-20 text-gray-600">
+    <div class="flex-row items-center justify-center w-3/5 pt-20 mt-20 text-gray-600">
         <div class="flex-col p-3 text-center text-orange-400">
             <span class="block lg:text-6xl md:text-lg md:font-bold">{name}</span>
             <span class="block font-thin text-gray-800 md:text-xs text-md">{description}</span>
         </div>
         <div>
             <div class="p-5 m-6 bg-gray-100 rounded-lg">
-                Hey thr, I am an IT studnt from Hoogrhid, Th Nthrlands. Studying at Hz univrsity of applid scincs.
+                Hey there, I am an IT student from Hoogerheide, The Netherlands. Studying at Hz university of applied sciences.
             </div>
         </div>
     </div>
@@ -20,9 +21,11 @@
     <div class="flex-row w-1/2 p-5 mt-24 mr-20 bg-gray-200 rounded-lg">
         <div>
             <span class="font-semibold text-gray-500">
-                This website is crafted using:
+                Technologies used for this website:
             </span>
             <div>
+                <img src={image} class="w-48 p-4" alt="svelte-logo" />
+                <img alt="docker" />
             </div>
         </div>
     </div>

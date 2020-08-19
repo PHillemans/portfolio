@@ -1,7 +1,7 @@
 <script lang="ts">
     import Link from '../extra/Link.svelte';
     import Seperator from '../extra/Seperator.svelte';
-    import image from '../../images/peppi.jpeg'
+    import image from '../../images/peppi.jpeg';
 </script>
 
 <div class="fixed flex justify-around w-full h-16">
@@ -18,6 +18,10 @@
             <Seperator sep={"\\"} />
             <Link buttonName={"Portfolio"} />
         </div>
-        <div>icons</div>
+        <div class="flex">
+            <div class="w-8 h-8 m-2 bg-red-300 rounded-full hover:bg-red-400 hover:shadow-inner hover:shadow-lg"></div>
+            <div class="w-8 h-8 m-2 bg-red-300 rounded-full hover:bg-red-400 hover:shadow-inner hover:shadow-lg"></div>
+            <div class="w-8 h-8 m-2 bg-red-300 rounded-full hover:bg-red-400 hover:shadow-inner hover:shadow-lg"></div>
+        </div>
     </div>
 </div>
