@@ -4,17 +4,12 @@
     import Experience from './Experience.svelte'
     import Portfolio from './Portfolio.svelte'
 
+  /* @todo make also mobile friendly */
     let name: string = 'Pepijn Hillemans';
     let description: string = 'IT student that likes experimenting';
 </script>
 
-<style style="css">
-    .gigantisch {
-        height: 1200px;
-    }
-</style>
-
-<div class="bg-gray-200 gigantisch">
+<div class="p-10 bg-gray-200 space-y-4">
     <Intro {name} {description} />
     <Interests />
     <Experience />

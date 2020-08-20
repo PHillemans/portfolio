@@ -1,27 +1,42 @@
 <script lang="ts">
-    import Link from '../extra/Link.svelte';
-    import Seperator from '../extra/Seperator.svelte';
-    import image from '../../images/peppi.jpeg';
+    import NavItems from './NavItems.svelte';
+    
+    /* images */
+    import github from '../../images/github.png';
+    import linkedin from '../../images/linkedin.png';
+
+    let width: number;
+    $: tooSmall = (): boolean => {
+        return width <= 1280;
+    }
 </script>
 
+<svelte:window bind:innerWidth={width} />
+
 <div class="fixed flex justify-around w-full h-16">
-    <div class="flex items-center content-between justify-between inline-block w-4/5 text-center text-white bg-orange-700 rounded-b-lg ">
-        <div>
-            <img src={image} alt="thisimage" class="w-48 h-48 mt-20 bg-green-200 rounded-full">
+    {#if !tooSmall()}
+        <div class="flex items-center justify-around inline-block w-3/5 text-center text-white bg-orange-700 rounded-b-lg">
+            <NavItems {width}/>
+            <div class="flex">
+                <a href="https://www.github.com/phillemans" target="_blank" class="w-8 m-2 rounded-full hover:bg-orange-600 hover:shadow-inner hover:shadow-lg">
+                    <img src={github} alt="github" />
+                </a>
+                <a href="https://www.linkedin.com/in/pepijn-hillemans-907114153/" target="_blank" class="w-8 m-2 rounded-full hover:bg-orange-600 hover:shadow-inner hover:shadow-lg">
+                    <img src={linkedin} alt="linkedin" />
+                </a>
+            </div>
         </div>
-        <div class="flex text-center lg:text-2xl md:text-lg">
-            <Link buttonName={"Introduction"} />
-            <Seperator sep={"/"} />
-            <Link buttonName={"Interests"} />
-            <Seperator  sep={"|"} />
-            <Link buttonName={"Experience"} />
-            <Seperator sep={"\\"} />
-            <Link buttonName={"Portfolio"} />
+    {:else}
+        <div class="flex items-center justify-around inline-block w-full text-center text-white bg-orange-700">
+            <NavItems {width}/>
+            <div class="flex">
+                <a href="https://www.github.com/phillemans" target="_blank" class="w-8 m-2 rounded-full hover:bg-orange-600 hover:shadow-inner hover:shadow-lg">
+                    <img src={github} alt="github" />
+                </a>
+                <a href="https://www.linkedin.com/in/pepijn-hillemans-907114153/" target="_blank" class="w-8 m-2 rounded-full hover:bg-orange-600 hover:shadow-inner hover:shadow-lg">
+                    <img src={linkedin} alt="linkedin" />
+                </a>
+            </div>
         </div>
-        <div class="flex">
-            <div class="w-8 h-8 m-2 bg-red-300 rounded-full hover:bg-red-400 hover:shadow-inner hover:shadow-lg"></div>
-            <div class="w-8 h-8 m-2 bg-red-300 rounded-full hover:bg-red-400 hover:shadow-inner hover:shadow-lg"></div>
-            <div class="w-8 h-8 m-2 bg-red-300 rounded-full hover:bg-red-400 hover:shadow-inner hover:shadow-lg"></div>
-        </div>
-    </div>
+    {/if}
 </div>
