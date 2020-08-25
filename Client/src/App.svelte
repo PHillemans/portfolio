@@ -3,7 +3,7 @@
     import Content from './components/Content/Content.svelte'
 </script>
 
-<div class="h-screen gigantisch">
+<div class="bg-gray-200 ">
     <Header />
     <Content />
 </div>

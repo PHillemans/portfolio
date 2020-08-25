@@ -9,7 +9,7 @@
 <div>
     <div class="p-2 m-6 rounded-lg space-y-2">
         <p>
-            <span class="text-lg font-semibold text-gray-700"> Hey there,</span> my name is Pepijn Hillemans and I am an {age} year old IT student from Hoogerheide,
+            <span class="text-lg font-semibold text-gray-800"> Hey there,</span> my name is Pepijn Hillemans and I am an {age} year old IT student from Hoogerheide,
             the Netherlands currently studying at <span class="font-bold">HZ University of applied sciences</span> doing my bachelor.
             On this website you will find some of my <span class="font-bold">interests and experience.</span>
         </p>

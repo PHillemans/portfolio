@@ -1,25 +1,46 @@
 <script lang="ts">
+  import {navigation} from './header';
   import Link from '../extra/Link.svelte';
 
   export let width:number;
+
+  /* @todo make interactive */
+  let topItem: boolean = false;
+  let lastItem: boolean = false;
+
+  let navigateItems: navigation[] = [
+    {name: 'Introduction'},
+    {name: 'Interests', selected: false},
+    {name: 'Experience'},
+    {name: 'Portfolio'}
+  ];
+
+  //todo check if item is last item or first
+  let currentItem: navigation = navigateItems.filter((item: navigation) => {
+    return item.name == 'Portfolio';
+  })[0];
+
+  let prevItem = navigateItems[navigateItems.findIndex((navigateItem: navigation) => {
+    return currentItem.name == navigateItem.name;
+  })-1].name;
+
+  let nextItem = navigateItems[navigateItems.findIndex((navigateItem: navigation) => {
+    return currentItem.name == navigateItem.name;
+  })];
 
   $: fits = () => {
     return width >= 700;
   }
 
-  /* @todo make interactive */
-  let topItem: boolean = false;
-  let lastItem: boolean = false;
-  let currentItem: string = 'Introduction';
 </script>
 
 <!-- On larger screens  -->
 {#if fits()}
   <div class="flex text-xl">
-    <Link buttonName={"Introduction"} />
-    <Link buttonName={"Interests"} />
-    <Link buttonName={"Experience"} />
-    <Link buttonName={"Portfolio"} />
+    {#each navigateItems as {name, selected}}
+      <Link buttonName={name} {selected} />
+    {/each}
+    {nextItem}
   </div>
 {:else}
   <div class="flex justify-center w-full">

@@ -9,7 +9,7 @@
     let description: string = 'IT student that likes experimenting';
 </script>
 
-<div class="p-10 bg-gray-200 space-y-4">
+<div class="p-10 space-y-4">
     <Intro {name} {description} />
     <Interests />
     <Experience />
