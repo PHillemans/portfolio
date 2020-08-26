@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {navigation} from './header';
+  import type {navigation} from './header';
   import Link from '../extra/Link.svelte';
 
   export let width:number;
@@ -16,17 +16,22 @@
   ];
 
   //todo check if item is last item or first
+  let getNavigateItem = (index: number): string => {
+    let navigateItemIndex = index > navigateItems.length-1 ? index-navigateItems.length : index;
+    return navigateItems[navigateItemIndex].name;
+  }
+
   let currentItem: navigation = navigateItems.filter((item: navigation) => {
     return item.name == 'Portfolio';
   })[0];
 
-  let prevItem = navigateItems[navigateItems.findIndex((navigateItem: navigation) => {
+  let prevItem = getNavigateItem(navigateItems.findIndex((navigateItem: navigation) => {
     return currentItem.name == navigateItem.name;
-  })-1].name;
+  })-1);
 
-  let nextItem = navigateItems[navigateItems.findIndex((navigateItem: navigation) => {
+  let nextItem = getNavigateItem(navigateItems.findIndex((navigateItem: navigation) => {
     return currentItem.name == navigateItem.name;
-  })];
+  })+1);
 
   $: fits = () => {
     return width >= 700;
@@ -40,7 +45,6 @@
     {#each navigateItems as {name, selected}}
       <Link buttonName={name} {selected} />
     {/each}
-    {nextItem}
   </div>
 {:else}
   <div class="flex justify-center w-full">

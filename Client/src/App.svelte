@@ -3,7 +3,7 @@
     import Content from './components/Content/Content.svelte'
 </script>
 
-<div class="bg-gray-200 ">
+<div class="bg-blue-900 ">
     <Header />
     <Content />
 </div>

@@ -2,6 +2,7 @@
     import NavItems from './NavItems.svelte';
     
     /* images */
+
     import github from '../../images/github.png';
     import linkedin from '../../images/linkedin.png';
 

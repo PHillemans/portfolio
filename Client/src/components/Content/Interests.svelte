@@ -1,16 +1,13 @@
 <script lang="ts">
-    import image from '../../images/svelte-logo.png'
-
 </script>
 
-<div class="flex-row w-1/2 p-5 mt-24 mr-20 bg-gray-200 rounded-lg">
-    <div>
-        <span class="font-semibold text-gray-500">
-            Technologies used for this website:
-        </span>
-        <div>
-            <img src={image} class="w-48 p-4" alt="svelte-logo" />
-            <img alt="docker" />
-        </div>
-    </div>
+<div class="flex-col w-1/2 p-10 text-center space-y-4">
+  <span class="text-2xl font-bold text-orange-400">Interests</span>
+  <div class="p-12 bg-indigo-200 rounded-lg">
+    <span>
+      
+    </span>
+    <span>
+    </span>
+  </div>
 </div>
